@@ -1,0 +1,465 @@
+$primary: #00b0b0;
+$grey: #ffffff40;
+$secondary: #aa18ef;
+$black: #000;
+$linear: linear-gradient(
+  90.12deg,
+  rgba(170, 24, 239, 0.78) 5.13%,
+  rgba(0, 176, 176, 0.88) 92.77%
+);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $black;
+  color: #fff;
+}
+
+.nav {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  //   border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+
+  @media (max-width: 481px) {
+    // display: grid;
+  }
+
+  .logo {
+    padding: 20px;
+  }
+
+  .hamburger {
+    display: none;
+
+    @media (max-width: 481px) {
+      display: grid;
+      padding: 20px;
+    }
+  }
+
+  .right {
+    display: flex;
+    gap: 40px;
+    padding-right: 2%;
+    color: #fff;
+
+    @media (max-width: 481px) {
+      display: none;
+      padding: 20px 5px;
+    }
+
+    .menu ul {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      list-style: none;
+
+      @media (max-width: 481px) {
+        display: hidden;
+        padding: 20px 5px;
+      }
+
+      li {
+        padding-left: 40px;
+
+        @media (max-width: 481px) {
+          padding: 10px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $primary;
+        }
+      }
+    }
+
+    .cart {
+      align-self: center;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.hero-section {
+  display: flex;
+  //   flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-around;
+  min-height: calc(100vh - 93.6px);
+  gap: 2em;
+  margin-bottom: 40px;
+
+  @media (max-width: 780px) {
+    display: grid;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__left {
+    max-width: 50%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @media (max-width: 780px) {
+      display: grid;
+      max-width: 100%;
+    }
+
+    .heading {
+      font-weight: 700;
+      font-size: clamp(40px, 4vw, 70px);
+      line-height: 1;
+      transition: 0.5s all ease-in-out;
+
+      span {
+        color: $primary;
+        transition: 0.9s all ease-in-out;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+
+      @media (max-width: 780px) {
+        font-weight: 500;
+        font-size: clamp(30px, 3vw, 60px);
+        text-align: center;
+      }
+    }
+
+    .paragraph {
+      font-weight: 500;
+      font-size: 1.5em;
+      padding: 1em 0;
+      width: 90%;
+
+      @media (max-width: 780px) {
+        font-weight: 300;
+        font-size: 1.2em;
+        padding: 1em 1.9em;
+        text-align-last: center;
+        width: 100%;
+      }
+    }
+
+    button {
+      font-weight: 700;
+      font-size: 20px;
+      border-radius: 50px;
+      padding: 0.3em 1em;
+      color: #fff;
+      background: $linear;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+        transform: scaleX(1.1);
+      }
+
+      @media (max-width: 780px) {
+        text-align: center;
+        width: 30%;
+        justify-self: center;
+      }
+    }
+  }
+
+  &__right {
+    max-width: 50%;
+    justify-self: flex-end;
+    height: 70%;
+
+    .img {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      img {
+        width: 90%;
+        height: 70%;
+      }
+    }
+
+    @media (max-width: 780px) {
+      justify-self: center;
+      max-width: 85%;
+      gap: 0em;
+      height: fit-content;
+    }
+  }
+}
+
+.banner {
+  background: url(../banner.png);
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 40px 0;
+  margin-bottom: 80px;
+
+  &__left {
+    align-self: center;
+    // width: 30%;
+
+    .book-img {
+      height: auto;
+      width: 70%;
+      top: 50px;
+      display: grid;
+      padding-left: 50px;
+      object-fit: unset;
+
+      img {
+        max-width: 200px;
+        width: 100%;
+        height: 10px;
+      }
+    }
+  }
+
+  &__right {
+    width: 70%;
+    height: 100%;
+    background: $secondary;
+    padding: 40px 20px;
+
+    h3 {
+      font-weight: 200;
+      font-size: 2rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 615px) {
+      padding: 20px 20px;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.banner2 {
+  background: url(../banner.png);
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 40px 0;
+
+  &__right {
+    align-self: center;
+    // width: 30%;
+
+    .book-img {
+      height: auto;
+      width: 70%;
+      top: 50px;
+      display: grid;
+      padding-left: 50px;
+      object-fit: unset;
+
+      img {
+        max-width: 200px;
+        width: 100%;
+        height: 10px;
+      }
+    }
+  }
+
+  &__left {
+    width: 70%;
+    height: 100%;
+    background: $primary;
+    padding: 40px 20px;
+
+    h3 {
+      font-weight: 200;
+      font-size: 2rem;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 615px) {
+      padding: 20px 20px;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.subscribe-banner {
+  height: 150px;
+  text-align: -webkit-center;
+  background: url(../banner.png);
+  margin: 40px 0;
+  position: relative;
+
+  &__subscribe {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    background-color: #f5f5f5;
+    width: 50%;
+    height: 100%;
+    filter: drop-shadow(5px 5px, $primary);
+
+    @media (max-width: 540px) {
+      width: 100%;
+    }
+
+    @media (max-width: 748px) {
+      justify-content: unset;
+      padding: 30px 10px 0px 10px;
+      height: 100%;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 30px;
+      color: $black;
+      margin-bottom: 10px;
+
+      @media (max-width: 748px) {
+        font-size: 20px;
+      }
+    }
+
+    input {
+      border: 2px solid $primary;
+      border-radius: 25px;
+      height: 40px;
+      color: $black;
+      padding: 20px;
+      margin-bottom: 10px;
+
+      &:focus {
+        outline: none;
+      }
+
+      @media (max-width: 540px) {
+        width: 100%;
+      }
+    }
+
+    span {
+      color: $black;
+      background-color: #dfdfdf;
+      border-radius: 25px;
+      width: 25%;
+      padding: 10px;
+      position: relative;
+      top: -51px;
+      left: 74%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #bdbdbd;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.book-section {
+  max-width: 100vw;
+  max-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: 90px 0px;
+
+  h4 {
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+
+    @media (max-width: 470px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .book-title {
+    color: $secondary;
+  }
+
+  &__container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    .open-book {
+      display: flex;
+      align-self: center;
+      justify-self: center;
+      object-fit: contain;
+      width: 360px;
+      height: 360px;
+      background-color: #00b0b0;
+      border-radius: 50%;
+
+      @media (max-width: 481px) {
+        width: 280px;
+        height: 280px;
+      }
+
+      img {
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        height: inherit;
+
+        @media (max-width: 481px) {
+          align-self: center;
+          justify-self: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// position: absolute;
+// width: 849px;
+// height: 727.63px;
+
+// background: url();
+// transform: rotate(4.04deg);
